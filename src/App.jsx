@@ -13,7 +13,7 @@ function App() {
     return [...currentLogs,"Processing data"]
   })
 
-  const res = await fetch("http://localhost:5000/register_qoute_deals")
+  const res = await fetch("https://dms-ul-fs-api.onrender.com/register_qoute_deals")
   const data = await res.json()
 
    if(data.status == 1){

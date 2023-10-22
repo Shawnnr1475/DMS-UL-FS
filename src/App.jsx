@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Logs from './Logs/Logs'
+import Logings from './Logings/Logings'
 import Prompt from './Prompt/Prompt'
 
 
@@ -46,7 +46,7 @@ function App() {
     <>
      <h1>DMS UL-FS</h1>
      <button onClick={onClickRegister}>Register quotes from UL as deals on FS</button>
-     <Logs logs={logs}/>
+     <Logings logs={logs}/>
      {showPromot?<Prompt onClick = {onClickPromptYes}/>:""}
     </>
   )

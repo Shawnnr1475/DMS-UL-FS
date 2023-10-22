@@ -47,7 +47,7 @@ function App() {
      <h1>DMS UL-FS</h1>
      <button onClick={onClickRegister}>Register quotes from UL as deals on FS</button>
      <Logs logs={logs}/>
-     {showPromot?<Prompt onClickPromptYes = {onClickPromptYes}/>:""}
+     {showPromot?<Prompt onClick = {onClickPromptYes}/>:""}
     </>
   )
 }

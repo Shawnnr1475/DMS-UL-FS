@@ -20,7 +20,7 @@ function App() {
     headers: {"Content-Type": "application/json"},
   })
   const data = await res.json()
-  setInfor(data.data)
+
 
    if(data.status == 1){
     setLogs((currentLogs)=>{return[...currentLogs,data.message]})
@@ -28,6 +28,7 @@ function App() {
     for(let i = 0; i< data.data.length; i++){
       setLogs((currentLogs)=>{return[...currentLogs,data.data[i].QuoteNumber]})
     }
+    setInfor(data.data)
     setShowPrompt(true)
   }
   else if (data.status == 2){

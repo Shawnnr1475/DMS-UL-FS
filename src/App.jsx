@@ -14,7 +14,11 @@ function App() {
     return [...currentLogs,"Processing data"]
   })
 
-  const res = await fetch("https://dms-ul-fs-api.onrender.com/register_qoute_deals")
+  const res = await fetch("https://dms-ul-fs-api.onrender.com/register_qoute_deals",{
+    method : "GET",
+    mode: "no-cors",
+    headers: {"Content-Type": "application/json"},
+  })
   const data = await res.json()
   setInfor(data.data)
 

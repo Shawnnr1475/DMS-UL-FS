@@ -43,6 +43,7 @@ function App() {
  }
 
  const onClickPromptNo = ()=>{
+  setShowPrompt(false)
   setLogs([""])
  }
   return (

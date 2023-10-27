@@ -7,6 +7,7 @@ import Prompt from './Prompt/Prompt'
 function App() {
  const [logs,setLogs] = useState([])
  const [showPromot, setShowPrompt] = useState(false)
+ const [infor,setInfor] = useState("")
 
  const onClickRegister = async ()=>{
   setLogs((currentLogs)=>{
@@ -15,6 +16,7 @@ function App() {
 
   const res = await fetch("https://dms-ul-fs-api.onrender.com/register_qoute_deals")
   const data = await res.json()
+  setInfor(data.data)
 
    if(data.status == 1){
     setLogs((currentLogs)=>{return[...currentLogs,data.message]})
@@ -37,10 +39,17 @@ function App() {
     method : "POST",
     mode: "no-cors",
     headers: {"Content-Type": "application/json"},
-    body: JSON.stringify(logs) 
+    body: JSON.stringify(infor) 
   })
   const data = await res.json()
-  console.log(data)
+  if (data){
+    setLogs((currentLogs)=>{return[...currentLogs,"Deals registered"]})
+  }
+  else{
+    setLogs((currentLogs)=>{return[...currentLogs,"Deals not registered"]})
+    setShowPrompt(false)
+    setLogs([""])
+  }
  }
 
  const onClickPromptNo = ()=>{

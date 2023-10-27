@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Prompt = ({onClickPromptYes}) => {
+const Prompt = ({onClickPromptYes, onClickPromptNo}) => {
   return (
     <div className='prompt'>
-        <button>No</button>
+        <button onClick={onClickPromptNo}>No</button>
         <button onClick={onClickPromptYes}>Yes</button>
     </div>
   )

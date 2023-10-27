@@ -42,12 +42,15 @@ function App() {
   console.log(data)
  }
 
+ const onClickPromptNo = ()=>{
+  setLogs([""])
+ }
   return (
     <>
      <h1>DMS UL-FS</h1>
      <button onClick={onClickRegister}>Register quotes from UL as deals on FS</button>
      <Logings logs={logs}/>
-     {showPromot?<Prompt onClick = {onClickPromptYes}/>:""}
+     {showPromot?<Prompt onClickPromptYes = {onClickPromptYes} onClickPromptNo = {onClickPromptNo} />:""}
     </>
   )
 }

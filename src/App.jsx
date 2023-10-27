@@ -35,6 +35,7 @@ function App() {
  const onClickPromptYes = async()=>{
   const res = await fetch("https://dms-ul-fs-api.onrender.com/create_deals",{
     method : "POST",
+    mode: "no-cors",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify(logs) 
   })

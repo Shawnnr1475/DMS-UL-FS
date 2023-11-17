@@ -21,7 +21,7 @@ function App() {
     },
     mode:"cors"
   })
-  
+
   const data = await res.json()
  
 
@@ -46,7 +46,7 @@ function App() {
 
   const res = await fetch("https://dms-ul-fs-api.onrender.com/create_deals",{
     method : "POST",
-    mode: "cors",
+    mode: "no-cors",
     headers: {
       "Content-Type": "application/json"},
     body: JSON.stringify(infor) 

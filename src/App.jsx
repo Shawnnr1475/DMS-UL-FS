@@ -7,7 +7,7 @@ import Prompt from './Prompt/Prompt'
 function App() {
  const [logs,setLogs] = useState([])
  const [showPromot, setShowPrompt] = useState(false)
- const [infor,setInfor] = useState("")
+ const [infor,setInfor] = useState([])
 
  const onClickRegister = async ()=>{
   setLogs((currentLogs)=>{

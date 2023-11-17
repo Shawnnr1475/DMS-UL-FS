@@ -15,12 +15,15 @@ function App() {
   })
 
   const res = await fetch("https://dms-ul-fs-api.onrender.com/register_qoute_deals",{
-    method : "GET",
-    mode: "no-cors",
-    headers: {"Content-Type": "application/json"},
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    mode:"cors"
   })
+  
   const data = await res.json()
-
+ 
 
    if(data.status == 1){
     setLogs((currentLogs)=>{return[...currentLogs,data.message]})
@@ -40,13 +43,15 @@ function App() {
  }
 
  const onClickPromptYes = async()=>{
-  console.log(infor)
+
   const res = await fetch("https://dms-ul-fs-api.onrender.com/create_deals",{
     method : "POST",
-    mode: "no-cors",
-    headers: {"Content-Type": "application/json"},
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json"},
     body: JSON.stringify(infor) 
   })
+
   const data = await res.json()
   if (data){
     setLogs((currentLogs)=>{return[...currentLogs,"Deals registered"]})
